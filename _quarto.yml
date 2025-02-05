@@ -1,0 +1,36 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "People of ESS 330: 2025"
+  favicon: favicon.ico
+  navbar:
+    background: "#1E4D2B"
+    foreground: "#C8C372"
+    pinned: true
+    logo: csu-rams-logo.png
+    favicon: favicon.ico
+    left:
+      - href: index.qmd
+        text: Map
+      - href: table.qmd
+        text: Table
+    right:
+      - icon: github
+        href: https://github.com/mikejohnson51/csu-ess-330/
+        aria-label: ESS 330
+
+format:
+  html:
+    theme: 
+      light: flatly
+      dark:  darkly
+    css: styles.css
+    toc: true
+    
+html-math-method:
+  method: mathjax
+  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+

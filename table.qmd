@@ -1,0 +1,16 @@
+---
+title: ""
+page-layout: full
+---
+
+```{r}
+#| echo: false
+
+people <- lapply(list.files('people', full.names = TRUE), 
+                 readr::read_csv, 
+                 show_col_types = FALSE) |> 
+  dplyr::bind_rows() |> 
+  dplyr::mutate(website = paste0("<a href='",website,"' target='_blank'>",website,"</a>"))
+
+DT::datatable(people , escape = F)
+```

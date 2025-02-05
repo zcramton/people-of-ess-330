@@ -1,0 +1,26 @@
+---
+title: ""
+page-layout: full
+---
+
+```{r}
+#| echo: false
+
+people <- lapply(list.files('people', full.names = TRUE), 
+                 readr::read_csv, 
+                 show_col_types = FALSE) |> 
+  dplyr::bind_rows() |> 
+  sf::st_as_sf(coords = c("hometown_lng", "hometown_lat"), crs = 4326) |>  
+   dplyr::mutate(tag = paste0("Name: <a href=", website,">", first, " ", last, 
+                              "</a><br>Major: ", major,
+                              "</a><br>Interest: ", interest))
+   
+# draw the map using {leaflet}
+library(leaflet)
+
+leaflet(people) %>% 
+   addProviderTiles("CartoDB.Positron") %>% # or some other...
+   addCircleMarkers(popup = ~tag, # note the tilde notation!
+                    opacity = .75,
+                    stroke = NA)
+```
