@@ -20,7 +20,6 @@ website:
       - icon: github
         href: https://github.com/mikejohnson51/csu-ess-330/
         aria-label: ESS 330
-
 format:
   html:
     theme: 
@@ -28,9 +27,4 @@ format:
       dark:  darkly
     css: styles.css
     toc: true
-    
-html-math-method:
-  method: mathjax
-  url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-
 
