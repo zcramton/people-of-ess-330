@@ -6,3 +6,6 @@
 /_site/
 .DS_Store
 people/.DS_Store
+.Rdata
+.httr-oauth
+.quarto
